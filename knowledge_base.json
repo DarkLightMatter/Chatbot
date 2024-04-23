@@ -7,6 +7,10 @@
     {
       "question": "i'm good you?",
       "answer": "I'm fine"
+    },
+    {
+      "question": "How are you today?",
+      "answer": "I'm good, thank you. How about you?"
     }
   ]
 }

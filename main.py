@@ -12,12 +12,12 @@ def save_knowledge_base(file_path: str, data: dict):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=2)
 
-
 #find best match from dictionary
 def find_best_match(user_question: str, questions: list[str]) -> str | None:
     matches: list = get_close_matches(user_question, questions, n=1, cutoff=0.6) #n=1 returns best answer, n=3 would return best 3. cutoff=0.6 = 60% similar
     return matches[0] if matches else None
 
+#get answer for question froom knowledge_base.json
 def get_answer_for_question(question: str, knowledge_base: dict) -> str | None:
     for q in knowledge_base["questions"]:
         if q["question"] == question:
@@ -49,42 +49,3 @@ def chat_bot():
 if __name__ == "__main__":
     print("Press 'quit' to exit the chatbot program.")
     chat_bot()
-
-
-
-
-
-
-
-
-"""
-import re
-
-# Define patterns and corresponding responses
-patterns_responses = {
-    r'hi|hello|hey': 'Hello! How can I assist you?',
-    r'how are you?': "I'm good. Thanks for asking! How was your day today?",
-    # Add more patterns and responses as needed
-}
-
-def chatbot_response(user_input):
-    # Iterate over patterns and find a match
-    for pattern, response in patterns_responses.items():
-        match = re.match(pattern, user_input.lower())
-        if match:
-            # If there's a match, return the corresponding response
-            return response.format(*match.groups())
-    
-    # If no match is found, return a default response
-    return "I'm sorry, I didn't understand that."
-
-# Main loop for interacting with the chatbot
-while True:
-    user_input = input("You: ") 
-    if user_input.lower() == 'exit':
-        print("Chatbot: Goodbye!")
-        break
-    else:
-        bot_response = chatbot_response(user_input)
-        print("Chatbot:", bot_response)
-"""
