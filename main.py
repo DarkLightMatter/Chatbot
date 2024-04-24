@@ -1,4 +1,7 @@
+#!/usr/bin/env python3
+
 import json
+from typing import Union
 from difflib import get_close_matches #try to match best response with given input
 
 #load Knowledge base from JSON file
@@ -13,12 +16,12 @@ def save_knowledge_base(file_path: str, data: dict):
         json.dump(data, file, indent=2)
 
 #find best match from dictionary
-def find_best_match(user_question: str, questions: list[str]) -> str | None:
+def find_best_match(user_question: str, questions: list[str]) -> Union[str, None]:
     matches: list = get_close_matches(user_question, questions, n=1, cutoff=0.6) #n=1 returns best answer, n=3 would return best 3. cutoff=0.6 = 60% similar
     return matches[0] if matches else None
 
 #get answer for question froom knowledge_base.json
-def get_answer_for_question(question: str, knowledge_base: dict) -> str | None:
+def get_answer_for_question(question: str, knowledge_base: dict) -> Union[str, None]:
     for q in knowledge_base["questions"]:
         if q["question"] == question:
             return q["answer"]
