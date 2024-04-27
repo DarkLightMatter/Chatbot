@@ -19,6 +19,22 @@
     {
       "question": "I am fine",
       "answer": "That's good"
+    },
+    {
+      "question": "Hi",
+      "answer": "Hi "
+    },
+    {
+      "question": "123",
+      "answer": "Hello! How can I assist you today?"
+    },
+    {
+      "question": "Yes",
+      "answer": "Hello! How may I assist you today?"
+    },
+    {
+      "question": "jdiqwje",
+      "answer": "Hello! How can I assist you today?"
     }
   ]
 }
