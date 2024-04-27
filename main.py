@@ -1,53 +1,76 @@
-#!/usr/bin/env python3
-
+import os
 import json
-from typing import Union
-from difflib import get_close_matches #try to match best response with given input
+import openai
+from dotenv import load_dotenv
+from difflib import get_close_matches
 
-#load Knowledge base from JSON file
-def load_knowledge_base(file_path: str) -> dict:
+# Set your OpenAI API key
+load_dotenv()
+openai.api_key = os.environ.get("CHATGPT_TOKEN")
+
+# Load knowledge base from JSON file
+def load_knowledge_base(file_path):
     with open(file_path, 'r') as file:
-        data: dict = json.load(file)
+        data = json.load(file)
     return data
 
-#save data to knowledge base
-def save_knowledge_base(file_path: str, data: dict):
+# Save knowledge base to JSON file
+def save_knowledge_base(file_path, data):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=2)
 
-#find best match from dictionary
-def find_best_match(user_question: str, questions: list[str]) -> Union[str, None]:
-    matches: list = get_close_matches(user_question, questions, n=1, cutoff=0.6) #n=1 returns best answer, n=3 would return best 3. cutoff=0.6 = 60% similar
+# Find best match from list of questions
+def find_best_match(user_question, questions):
+    matches = get_close_matches(user_question, questions, n=1, cutoff=0.6)
     return matches[0] if matches else None
 
-#get answer for question froom knowledge_base.json
-def get_answer_for_question(question: str, knowledge_base: dict) -> Union[str, None]:
+# Get answer for a given question from knowledge base
+def get_answer_for_question(question, knowledge_base):
     for q in knowledge_base["questions"]:
         if q["question"] == question:
             return q["answer"]
-        
-def chat_bot():
-    knowledge_base: dict = load_knowledge_base('knowledge_base.json')
+    return None
 
-    while True: 
-        user_input: str = input('You: ')
+def chat_bot():
+    knowledge_base = load_knowledge_base('knowledge_base.json')
+
+    while True:
+        user_input = input('You: ')
 
         if user_input.lower() == "quit":
             break
-        best_match: str | None = find_best_match(user_input, [q["question"] for q in knowledge_base["questions"]])
+
+        best_match = find_best_match(user_input, [q["question"] for q in knowledge_base["questions"]])
 
         if best_match:
-            answer: str = get_answer_for_question(best_match, knowledge_base)
+            answer = get_answer_for_question(best_match, knowledge_base)
             print(f'Bot: {answer}')
         else:
-            print("Bot: I don\'t know the answer. Can you teach me?")
-            new_answer: str = input('Type the answer or "skip" to skip: ')
+            print("Bot: I don't know the answer. Let me consult ChatGPT. Please wait...")
 
-            if new_answer.lower() != 'skip':
+            # Use ChatGPT to generate a response
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "user", "content": user_input}
+                ]
+            )
+            new_answer = response['choices'][0]['message']['content']
+
+            print(f"Bot: ChatGPT suggests: '{new_answer}'")
+            confirm = input("You: (type 'yes' to accept or anything else to provide your own answer) ")
+
+            if confirm.lower() == 'yes':
                 knowledge_base["questions"].append({"question": user_input, "answer": new_answer})
                 save_knowledge_base('knowledge_base.json', knowledge_base)
-                print("Bot: Thank you, I learned a new response!")
-
+                print("Bot: Great! I learned a new response.")
+            else:
+                print("Bot: Okay, please provide the correct answer:")
+                correct_answer = input("You: ")
+                if correct_answer.lower() != 'skip':
+                    knowledge_base["questions"].append({"question": user_input, "answer": correct_answer})
+                    save_knowledge_base('knowledge_base.json', knowledge_base)
+                    print("Bot: Thank you for teaching me!")
 
 if __name__ == "__main__":
     print("Press 'quit' to exit the chatbot program.")
