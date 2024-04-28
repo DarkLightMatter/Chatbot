@@ -19,6 +19,22 @@
     {
       "question": "I am fine",
       "answer": "That's good"
+    },
+    {
+      "question": "tell me a joke",
+      "answer": "what's brown and sticky"
+    },
+    {
+      "question": "idk please tell me ",
+      "answer": "a stick "
+    },
+    {
+      "question": "how's it going bro",
+      "answer": "i'm doing aight what about you"
+    },
+    {
+      "question": "nice to meet you",
+      "answer": "Nice to meet you too! How can I assist you today?"
     }
   ]
 }
