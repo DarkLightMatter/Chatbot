@@ -7,25 +7,15 @@
     <title>Chatbot</title>
 </head>
 <body>
-    
     <div id="chat" class="container">
         <h1>Chatbot</h1>
-        <div id="chat-box">
-            {% if user_input %}
-                <p>You: {{ user_input }}</p>
-            {% endif %}
-            {% if bot_response %}
-                <p>{{ bot_response }}</p>
-            {% endif %}
-        </div>
-        <form id="user-input-form" action="/" method="post">
+        <form id="user-input-form">
             <textarea id="inputText" placeholder="Type your input here..."></textarea>
-            <button onclick="processInput()">Submit</button>
-            <div id="output"></div>
+            <button id="submitBtn">Submit</button>
         </form>
+        <div id="output"></div>
     </div>
 
     <script src="../static/app.js"></script>
-
 </body>
 </html>

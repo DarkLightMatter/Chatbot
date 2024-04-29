@@ -35,6 +35,22 @@
     {
       "question": "nice to meet you",
       "answer": "Nice to meet you too! How can I assist you today?"
+    },
+    {
+      "question": "123",
+      "answer": "Hello! How can I assist you today?"
+    },
+    {
+      "question": "Hi",
+      "answer": "Hello! How can I assist you today?"
+    },
+    {
+      "question": "I'm good. How is your day",
+      "answer": "I'm just a virtual assistant so I don't have physical feelings or experiences, but I'm here to help you with any questions or tasks you have. How can I assist you today?"
+    },
+    {
+      "question": "Goodbye",
+      "answer": "Goodbye! Have a great day ahead."
     }
   ]
 }
