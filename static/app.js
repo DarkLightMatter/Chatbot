@@ -15,7 +15,7 @@ userInputForm.addEventListener('submit', function(event) {
         }
     })
     .then(response => response.json())
-    .then(data => {
+    .then(data => {            
         outputDiv.innerHTML += '<p>User: ' + data.user_input + '</p>';
         outputDiv.innerHTML += '<p>Bot: ' + data.bot_response + '</p>';
     });

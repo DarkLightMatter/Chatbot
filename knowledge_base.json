@@ -51,6 +51,14 @@
     {
       "question": "Goodbye",
       "answer": "Goodbye! Have a great day ahead."
+    },
+    {
+      "question": "Yes, Can you help me something?\n",
+      "answer": "Of course! I'll do my best to assist you with whatever you need help with. What do you need assistance with?"
+    },
+    {
+      "question": "What is the web server",
+      "answer": "A web server is a software application that is responsible for serving web pages to clients (usually web browsers) upon request. It manages the communication between the client and the server, handling requests for resources such as HTML files, images, and other types of content. The most common web servers are Apache, Nginx, and Microsoft Internet Information Services (IIS)."
     }
   ]
 }
