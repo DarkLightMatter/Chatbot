@@ -20,7 +20,10 @@
 
 ## Language
 
-* Python 
+* Python
+
+## Framework
+* Flask
 ## Group Members
 * Hao Ly 
 * Jonathan Gaytan
