@@ -14,14 +14,18 @@
 * Response Generation
 
 ## Features
-* Response to user's input through terminal
+* Response to user's input through the terminal
+* Suggest answers to user with OpenAI API
 
 
 ## Language
 
-* Python 
+* Python
+
+## Framework
+* Flask
 ## Group Members
 * Hao Ly 
 * Jonathan Gaytan
 * Matthew Li
-* Phu 
+* Phu Lam
