@@ -38,7 +38,7 @@
     },
     {
       "question": "123",
-      "answer": "Hello! How can I assist you today?"
+      "answer": "I can't recognize your question"
     },
     {
       "question": "Hi",
@@ -53,12 +53,193 @@
       "answer": "Goodbye! Have a great day ahead."
     },
     {
-      "question": "Yes, Can you help me something?\n",
-      "answer": "Of course! I'll do my best to assist you with whatever you need help with. What do you need assistance with?"
+      "question": "What's my name?",
+      "answer": "I'm sorry, I do not know your name as you have not provided it."
     },
     {
-      "question": "What is the web server",
-      "answer": "A web server is a software application that is responsible for serving web pages to clients (usually web browsers) upon request. It manages the communication between the client and the server, handling requests for resources such as HTML files, images, and other types of content. The most common web servers are Apache, Nginx, and Microsoft Internet Information Services (IIS)."
+      "question": "What is the capital of France?",
+      "answer": "The capital of France is Paris."
+    },
+    {
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "answer": "William Shakespeare wrote 'Romeo and Juliet'."
+    },
+    {
+      "question": "What is the boiling point of water?",
+      "answer": "The boiling point of water at sea level is 100 degrees Celsius or 212 degrees Fahrenheit."
+    },
+    {
+      "question": "What is the formula for the area of a circle?",
+      "answer": "The formula for the area of a circle is \u00cf\u20acr^2, where 'r' is the radius of the circle."
+    },
+    {
+      "question": "What is the largest planet in our solar system?",
+      "answer": "The largest planet in our solar system is Jupiter."
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "answer": "Leonardo da Vinci painted the Mona Lisa."
+    },
+    {
+      "question": "What is the chemical symbol for gold?",
+      "answer": "The chemical symbol for gold is 'Au'."
+    },
+    {
+      "question": "What is the speed of light?",
+      "answer": "The speed of light in a vacuum is approximately 299,792 kilometers per second."
+    },
+    {
+      "question": "What is the meaning of 'carpe diem'?",
+      "answer": "'Carpe diem' is a Latin phrase that means 'seize the day' or 'enjoy the present moment without worrying about the future'."
+    },
+    {
+      "question": "Who is the current president of the United States?",
+      "answer": "As of my last update, the current president of the United States is Joe Biden."
+    },
+    {
+      "question": "What is the square root of 144?",
+      "answer": "The square root of 144 is 12."
+    },
+    {
+      "question": "Who discovered gravity?",
+      "answer": "Sir Isaac Newton is credited with discovering the concept of gravity."
+    },
+    {
+      "question": "What is the population of China?",
+      "answer": "As of my last update, the population of China is over 1.4 billion people."
+    },
+    {
+      "question": "What is the tallest mountain in the world?",
+      "answer": "Mount Everest is the tallest mountain in the world, measured from sea level to its summit."
+    },
+    {
+      "question": "What is the currency of Japan?",
+      "answer": "The currency of Japan is the Japanese Yen."
+    },
+    {
+      "question": "What is Python?",
+      "answer": "Python is a high-level, interpreted programming language known for its simplicity and readability."
+    },
+    {
+      "question": "What is a variable in programming?",
+      "answer": "A variable is a named storage location in computer memory that holds a value."
+    },
+    {
+      "question": "What is a function?",
+      "answer": "A function is a block of reusable code that performs a specific task. It takes input, processes it, and returns output."
+    },
+    {
+      "question": "What is a loop?",
+      "answer": "A loop is a programming construct that repeats a block of code until a specified condition is met."
+    },
+    {
+      "question": "What is object-oriented programming (OOP)?",
+      "answer": "Object-oriented programming (OOP) is a programming paradigm based on the concept of 'objects', which can contain data and code."
+    },
+    {
+      "question": "What is inheritance in OOP?",
+      "answer": "Inheritance is a mechanism in OOP where a new class inherits properties and behaviors from an existing class."
+    },
+    {
+      "question": "What is a class?",
+      "answer": "A class is a blueprint for creating objects in OOP. It defines properties (attributes) and behaviors (methods) of objects."
+    },
+    {
+      "question": "What is the difference between '==' and '===' in JavaScript?",
+      "answer": "'==' is a loose equality operator in JavaScript that compares values after converting them to a common type. '===' is a strict equality operator that compares both value and type."
+    },
+    {
+      "question": "What is a Git?",
+      "answer": "Git is a distributed version control system used for tracking changes in source code during software development."
+    },
+    {
+      "question": "What is a database?",
+      "answer": "A database is an organized collection of data stored electronically in a structured format."
+    },
+    {
+      "question": "What is SQL?",
+      "answer": "SQL (Structured Query Language) is a programming language used for managing and manipulating relational databases."
+    },
+    {
+      "question": "What is HTML?",
+      "answer": "HTML (HyperText Markup Language) is the standard markup language used to create and design web pages."
+    },
+    {
+      "question": "What is CSS?",
+      "answer": "CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML."
+    },
+    {
+      "question": "What is JavaScript?",
+      "answer": "JavaScript is a programming language used to create interactive effects within web browsers."
+    },
+    {
+      "question": "What is an API?",
+      "answer": "An API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other."
+    },
+    {
+      "question": "How was your day?",
+      "answer": "My day was good, thank you for asking. How about yours?"
+    },
+    {
+      "question": "What did you do today?",
+      "answer": "Today, I helped users like you and learned new things!"
+    },
+    {
+      "question": "What are your plans for the weekend?",
+      "answer": "I don't have plans, but I'm here to assist you with anything you need!"
+    },
+    {
+      "question": "How's the weather?",
+      "answer": "The weather is sunny/cloudy/rainy today, depending on your location."
+    },
+    {
+      "question": "What's your favorite movie?",
+      "answer": "I'm a chatbot, so I don't watch movies, but I've heard 'The Matrix' is popular among humans."
+    },
+    {
+      "question": "Do you like to travel?",
+      "answer": "I don't have preferences, but I can provide information about travel destinations!"
+    },
+    {
+      "question": "What's your favorite food?",
+      "answer": "As a chatbot, I don't eat, but I've heard humans enjoy pizza and sushi!"
+    },
+    {
+      "question": "How do you relax?",
+      "answer": "I don't experience stress, but I'm always here to help you relax with a conversation!"
+    },
+    {
+      "question": "What's your favorite hobby?",
+      "answer": "I don't have hobbies, but I enjoy chatting with users like you!"
+    },
+    {
+      "question": "What time is it?",
+      "answer": "The current time is [insert current time]."
+    },
+    {
+      "question": "What's new?",
+      "answer": "Not much, just here to assist you. How can I help you today?"
+    },
+    {
+      "question": "How are you feeling?",
+      "answer": "As a chatbot, I don't have feelings, but I'm here and ready to assist you!"
+    },
+    {
+      "question": "What's the latest news?",
+      "answer": "You can find the latest news on various websites or news apps."
+    },
+    {
+      "question": "What's your favorite book?",
+      "answer": "I'm a chatbot, so I don't read books, but I've heard 'To Kill a Mockingbird' is a classic."
+    },
+    {
+      "question": "What's your favorite music?",
+      "answer": "As a chatbot, I don't listen to music, but I've heard humans enjoy a wide range of genres."
+    },
+    {
+      "question": "Nothing",
+      "answer": "I'm here to help if there's anything you need. Just let me know!"
     }
+    
   ]
 }

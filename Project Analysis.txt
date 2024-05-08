@@ -1,0 +1,59 @@
+--- Analyze Code --- 
+1.Flask Setup:
+- We're using Flask, a popular Python web framework, to build our chatbot application. 
+- Flask allows us to define routes and handle HTTP requests easily.
+
+2.Loading and Saving Knowledge Base:
+- The load_knowledge_base function loads data from the knowledge_base.json file into memory.
+- The save_knowledge_base function saves data back to the JSON file.
+
+3.Matching User Input:
+- The find_best_match function utilizes `get_close_matches from difflib` to 
+find the best match for the user's question within a certain cutoff similarity. 
+If a match is found, it returns the closest question match; otherwise, it returns None.
+
+4.Retrieving Answers:
+- The get_answer_for_question function searches the loaded knowledge base for the answer corresponding to the provided question. 
+If the question is found, it returns the associated answer; otherwise, it returns None.
+
+5.Processing User Input:
+- In the '/' route, when a POST request is received (i.e., when the user submits a question), the user's input is extracted from the form.
+- The knowledge_base.json is loaded.
+- The best matching question from the knowledge base is found using find_best_match.
+- If a match is found, the corresponding answer is retrieved. Otherwise, the OpenAI API is called to generate a response.
+- The user input and bot response are then saved to the knowledge_base.json file.
+
+6.Using OpenAI API:
+- We're utilizing OpenAI's Chat Completion API to generate responses for user questions that don't match any in the knowledge base.
+
+7.JSON Knowledge Base:
+- Our knowledge_base.json file stores predefined questions and answers for the chatbot. This acts as a lookup table for the chatbot's responses.
+
+--- Algorithms --- 
+1.Rule-based Chatbot:
+    - The use of `get_close_matches from difflib` to find the best match for user questions involves a rule-based strategy. 
+    This function uses a similarity metric to find the closest match between the user's input and the predefined questions in the knowledge base.
+    
+    - If a close match is found, the chatbot applies a rule to select the most similar question and retrieves its associated answer.
+
+2.Predefined-Pattern Algorithms:
+    - Our chatbot relies on a predefined set of questions and answers stored in the `knowledge_base.json` file.
+    Each question in the knowledge base has a corresponding answer
+
+    - When a user input matches exactly with a question in the knowledge base, the chatbot retrieves the corresponding answer directly from the predefined patterns.
+    This approach is deterministic and relies on exact matches
+
+3.Fuzzy Matching Algorithms:
+    - We're using the get_close_matches function from the difflib module, which employs a fuzzy matching algorithm 
+    to find the best matches for user input within the predefined questions in the knowledge base.
+
+NOTE: 
+- A regular expression (regex) is a sequence of characters that define a search pattern, mainly used for pattern matching within strings.
+In this case, it is used to search and match the string from the user's input with the predefined question in the knowledge base.
+
+- Our code doesn't directly use a regular expression but we're using `get_close_matches` function from difflib (which is fuzzy matching algorithm) to match between user's input
+and our predefined questions in the knowledge base.
+
+- The reason why we're using the fuzzy matching algorithm instead of regular expression
+because it can handle variations in user input (fuzzy matching is designed to handle variations and typos, and slight differences in text data) so it can improve the user's experience
+with our chatbot because the user does not always type the right input
