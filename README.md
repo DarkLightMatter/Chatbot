@@ -9,12 +9,12 @@
 - It will focus on basic interactions and predefined responses.
 
 ## Algorithms
-* Regular Expressions
+* Rule-based
 * Predefined Patterns
-* Response Generation
+* Fuzzy Matching
 
 ## Features
-* Response to user's input through the terminal
+* Response to user's input question
 * Suggest answers to user with OpenAI API
 
 
