@@ -3,9 +3,8 @@
 
 
 ## Description
-- CPSC 481 Project
 - Design and implement a rule-based chatbot using regular expressions and predefined patterns
--  The chatbot will be capable of understanding user inputs and generating responses based on specific rules and patterns defined by us. 
+- The chatbot will be capable of understanding user inputs and generating responses based on specific rules and patterns defined by us. 
 - It will focus on basic interactions and predefined responses.
 
 ## Algorithms
